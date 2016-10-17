@@ -1,0 +1,31 @@
+<!DOCTIPE html>
+<html>
+  <head>
+    <link href="{{asset('/css/styleGfct.css')}}" rel="stylesheet">
+  </head>
+  <body>
+    <h1>GESTOR FCT</h1>
+    <table id="empresa">
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Código Postal</th>
+        <th>Telefono 1</th>
+        <th>Telefono 2</th>
+        <th>Fecha de creación</th>
+      </tr>
+    {% for item in empresa %}
+      <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.nombre }}</td>
+        <td>{{ item.direccion }}</td>
+        <td>{{ item.cp }}</td>
+        <td>{{ item.telefono1 }}</td>
+        <td>{{ item.telefono2 }}</td>
+        <td>{{ item.fechaCreacion.date }}</td>
+      <tr>
+    {% endfor %}
+    </table>
+  </body>
+</html>
