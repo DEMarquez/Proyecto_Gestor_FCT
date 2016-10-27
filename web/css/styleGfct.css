@@ -1,6 +1,6 @@
 
 
-body {
+.cuerpo {
    text-align: center;
    background-color: #434955;
    color: white;
@@ -28,4 +28,25 @@ th{
 
   font-size: 20px;
   font-weight:bold;
+}
+
+.cuerpo2 {
+   background-color: #434955;
+   color: white;
+}
+
+nav{
+  margin-left: 40%;
+}
+
+.etiqueta{
+  margin-right: 1%;
+  font:bold 20px arial, sans-serif;
+
+
+}
+
+.etiqueta_elemento{
+  height: 25px
+
 }

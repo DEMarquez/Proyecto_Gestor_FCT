@@ -5,3 +5,7 @@ gfct_homepage:
 all_empresa:
     path:     /empresa/all
     defaults: { _controller: GfctBundle:Empresa:all }
+
+nueva_empresa:
+    path:     /empresa/new
+    defaults: { _controller: GfctBundle:Empresa:new }
