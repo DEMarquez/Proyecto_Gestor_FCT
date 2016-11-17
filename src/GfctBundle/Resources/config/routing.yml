@@ -13,3 +13,8 @@ all_alumno:
 nueva_empresa:
     path:     /empresa/new
     defaults: { _controller: GfctBundle:Empresa:new }
+
+jsonRespuesta:
+    path:     /empresa
+    defaults: { _controller: GfctBundle:EmpresaApi:JSON }
+    methods:  [GET]
