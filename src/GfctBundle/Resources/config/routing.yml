@@ -20,9 +20,14 @@ nueva_empresa:
 
 nuevo_profesor:
     path:     /profesor/new
-    defaults: { _controller: GfctBundle:Profesores:new }    
+    defaults: { _controller: GfctBundle:Profesores:new }
 
 jsonRespuesta:
     path:     /empresa
     defaults: { _controller: GfctBundle:EmpresaApi:JSON }
+    methods:  [GET]
+
+jsonRespuesta_profesores:
+    path:     /profesor
+    defaults: { _controller: GfctBundle:ProfesoresApi:JSON }
     methods:  [GET]

@@ -43,7 +43,7 @@ class Profesores
     private $departamento;
 
       /**
-      * @ORM\OneToMany(targetEntity="Alumnos", mappedBy="$nProfesor")
+      * @ORM\OneToMany(targetEntity="Alumnos", mappedBy="nProfesor")
       */
     private $nAlumno;
 

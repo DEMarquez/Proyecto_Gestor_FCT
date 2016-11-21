@@ -4,7 +4,7 @@ namespace GfctBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use GfctBundle\Entity\Profesores;
-//use GfctBundle\Form\EmpresaType;
+use GfctBundle\Form\ProfesoresType;
 use Symfony\Component\HttpFoundation\Request;
 
 class ProfesoresController extends Controller
@@ -19,21 +19,21 @@ class ProfesoresController extends Controller
 
     public function newAction(Request $request)
     {
-      $empresa=new Profesores();
-      $form=$this->createForm(ProfesoresType::class,$profesor);
+      $profesores=new Profesores();
+      $form=$this->createForm(ProfesoresType::class,$profesores);
 
       $form->handleRequest($request);
       if($form->isSubmitted() && $form->isValid()){
-        $profesor=$form->getData();
+        $profesores=$form->getData();
 
         $em=$this->getDoctrine()->getManager();
-        $em->persist($profesor);
+        $em->persist($profesores);
         $em->flush();
 
         //return $this->redirectToRoute('trask_success');
       }
 
-      return $this->render('GfctBundle:profesores:new.html.twig',array("form"=>$form->createView() ));
+      return $this->render('GfctBundle:Profesores:new.html.twig',array("form"=>$form->createView() ));
     }
 
 }

@@ -57,7 +57,7 @@ class Alumnos
     private $nEmpresa;
 
     /**
-     * @ORM\ManyToOne(targetEntity="profesores", inversedBy="nAlumno")
+     * @ORM\ManyToOne(targetEntity="Profesores", inversedBy="nAlumno")
      * @ORM\JoinColumn(name="nProfesor", referencedColumnName="id")
      */
     private $nProfesor;
@@ -190,5 +190,29 @@ class Alumnos
     public function getNEmpresa()
     {
         return $this->nEmpresa;
+    }
+
+    /**
+     * Set nProfesor
+     *
+     * @param \GfctBundle\Entity\Profesores $nProfesor
+     *
+     * @return Alumnos
+     */
+    public function setNProfesor(\GfctBundle\Entity\Profesores $nProfesor = null)
+    {
+        $this->nProfesor = $nProfesor;
+
+        return $this;
+    }
+
+    /**
+     * Get nProfesor
+     *
+     * @return \GfctBundle\Entity\Profesores
+     */
+    public function getNProfesor()
+    {
+        return $this->nProfesor;
     }
 }

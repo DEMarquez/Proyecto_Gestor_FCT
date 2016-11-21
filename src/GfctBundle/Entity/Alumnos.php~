@@ -52,9 +52,15 @@ class Alumnos
 
     /**
      * @ORM\ManyToOne(targetEntity="Empresa", inversedBy="nAlumnos")
-     * @ORM\JoinColumn(name="nEmpresa", referencedColumnName="nombre")
+     * @ORM\JoinColumn(name="nEmpresa", referencedColumnName="id")
      */
     private $nEmpresa;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Profesores", inversedBy="nAlumno")
+     * @ORM\JoinColumn(name="nProfesor", referencedColumnName="id")
+     */
+    private $nProfesor;
 
     /**
      * Get id
@@ -160,5 +166,29 @@ class Alumnos
     public function getCiclo()
     {
         return $this->ciclo;
+    }
+
+    /**
+     * Set nEmpresa
+     *
+     * @param \GfctBundle\Entity\Empresa $nEmpresa
+     *
+     * @return Alumnos
+     */
+    public function setNEmpresa(\GfctBundle\Entity\Empresa $nEmpresa = null)
+    {
+        $this->nEmpresa = $nEmpresa;
+
+        return $this;
+    }
+
+    /**
+     * Get nEmpresa
+     *
+     * @return \GfctBundle\Entity\Empresa
+     */
+    public function getNEmpresa()
+    {
+        return $this->nEmpresa;
     }
 }

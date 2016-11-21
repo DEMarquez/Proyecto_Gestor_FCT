@@ -23,10 +23,10 @@ class ProfesoresType extends AbstractType
             ->add('nombre',TextType::class,array('label'=>'Nombre',
                                                  'label_attr'=>array('class' => 'etiqueta'),
                                                  'attr' => array('class' => 'etiqueta_elemento')))
-            ->add('apellidos',TextType::class,array('label'=>'Nombre',
+            ->add('apellidos',TextType::class,array('label'=>'Apellidos',
                                                  'label_attr'=>array('class' => 'etiqueta'),
                                                  'attr' => array('class' => 'etiqueta_elemento')))
-            ->add('departamento',TextType::class,array('label'=>'Nombre',
+            ->add('departamento',TextType::class,array('label'=>'Departamento',
                                                  'label_attr'=>array('class' => 'etiqueta'),
                                                  'attr' => array('class' => 'etiqueta_elemento')))
             ->add('guardar',SubmitType::class,array('label'=>'Salvar'))
