@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class ProfesoresApiController extends Controller
 {
   private function serializeEmpresa(Profesores $profesor)
-   {
+   {//seleccionamos la info del entity Profesor
      return array(
          'id' => $profesor->getId(),
          'nombre' => $profesor->getNombre(),
@@ -19,7 +19,7 @@ class ProfesoresApiController extends Controller
      );
    }
    public function JSONAction()
-   {
+   {//generamos json
        $repository = $this->getDoctrine()->getRepository('GfctBundle:Profesores');
        $profesores = $repository->findAll();
 

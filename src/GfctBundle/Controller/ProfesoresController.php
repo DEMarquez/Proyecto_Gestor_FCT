@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 class ProfesoresController extends Controller
 {
     public function allAction()
-    {
+    {//generamos insercion a tabla profesores
       $repository = $this->getDoctrine()->getRepository('GfctBundle:Profesores');
       // find *all* pro
       $pro = $repository->findAll();
@@ -18,7 +18,7 @@ class ProfesoresController extends Controller
     }
 
     public function newAction(Request $request)
-    {
+    {//generamos formulario profesores
       $profesores=new Profesores();
       $form=$this->createForm(ProfesoresType::class,$profesores);
 
