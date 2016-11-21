@@ -1,0 +1,25 @@
+<!DOCTIPE html>
+<html>
+  <head>
+    <link href="{{asset('/css/styleGfct.css')}}" rel="stylesheet">
+  </head>
+  <body class="cuerpo">
+    <h1>GESTOR FCT SECCION PROFESORES</h1>
+    <table id="profesores">
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Departamento</th>
+      </tr>
+    {% for item in profesores %}
+      <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.nombre }}</td>
+        <td>{{ item.apellidos }}</td>
+        <td>{{ item.departamento }}</td>
+      <tr>
+    {% endfor %}
+    </table>
+  </body>
+</html>

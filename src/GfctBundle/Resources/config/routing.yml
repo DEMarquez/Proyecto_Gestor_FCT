@@ -10,6 +10,10 @@ all_alumno:
     path:     /alumno/all
     defaults: { _controller: GfctBundle:Alumno:all }
 
+all_profesores:
+    path:     /profesor/all
+    defaults: { _controller: GfctBundle:Profesores:all }
+
 nueva_empresa:
     path:     /empresa/new
     defaults: { _controller: GfctBundle:Empresa:new }
