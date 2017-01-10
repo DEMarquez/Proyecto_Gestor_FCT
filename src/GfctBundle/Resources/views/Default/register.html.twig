@@ -1,0 +1,19 @@
+<!DOCTIPE html>
+<html>
+  <head>
+    <link href="{{asset('/css/styleGfct.css')}}" rel="stylesheet">
+  </head>
+  <body class="cuerpo2">
+    <nav>
+      <h1>Formulario DE INSCRIPCION A GESTOR FCT</h1>
+      {{ form_start(form) }}
+          {{ form_row(form.username) }}
+          {{ form_row(form.email) }}
+          {{ form_row(form.plainPassword.first) }}
+          {{ form_row(form.plainPassword.second) }}
+          {{ form_row(form.guardar) }}
+          {{ form_row(form.borrar) }}
+      {{ form_end(form) }}
+    </nav>
+  </body>
+</html>

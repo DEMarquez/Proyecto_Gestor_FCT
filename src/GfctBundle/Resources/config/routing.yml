@@ -2,6 +2,18 @@ gfct_homepage:
     path:     /
     defaults: { _controller: GfctBundle:Default:index }
 
+nuevo_usuario:
+    path:     /register
+    defaults: { _controller: GfctBundle:User:register }
+
+usuarios:
+    path:     /usuarios
+    defaults: { _controller: GfctBundle:User:usuarios }
+
+login:
+    path:     /usuarios/login
+    defaults: { _controller: GfctBundle:User:login }
+
 all_empresa:
     path:     /empresa/all
     defaults: { _controller: GfctBundle:Empresa:all }
