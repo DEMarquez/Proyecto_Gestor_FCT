@@ -4,6 +4,9 @@ namespace GfctBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\Validator\Constraints as SecurityAssert;
+
 
 /**
  * User
@@ -26,13 +29,25 @@ class User implements UserInterface
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=255, unique=true)
-     */
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min = 4,
+     *      max = 32,
+     *      minMessage = "El campo username debe tener como minimo 4 caracteres",
+     *      maxMessage = "El campo username debe tener como máximo 32 caracteres"
+     * )
+    */
     private $username;
 
     /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Email(
+     *     message = "El correo electrónico '{{ value }}' no es un correo electrónico válido.",
+     *     checkMX = true
+     * )
      */
     private $email;
 
@@ -54,6 +69,21 @@ class User implements UserInterface
         return $this->id;
     }
 
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Regex(
+     *     pattern     = "/^(?=.*[A-Z])(?=.*\d).+$/",
+     *     match=true,
+     *     message="La contraseña tiene que contener mayusculas y numeros"
+     * )
+     *
+     * @Assert\Length(
+     *      min = 8,
+     *      max = 16,
+     *      minMessage = "La contraseña tiene que tener al menos 8 caracteres",
+     *      maxMessage = "La contraseña tiene que tener menos de 16 caracteres"
+     * )
+    */
     private $plainPassword;
 
     public function getPlainPassword()
